@@ -202,6 +202,13 @@ export const skills_major =
         bordercolor: '#000000',
         link : 'https://www.infragistics.com/',
     },
+    {
+        name:'Prism',
+        background:'#FFFFFF',
+        foreground:'#7E7D81',
+        bordercolor: '#000000',
+        link: 'https://prismlibrary.com/docs/',
+    },
 ];
 
 export const skills_minor = 
@@ -232,13 +239,7 @@ export const skills_minor =
 ];
 
 export const nugets = [
-    {
-        name:'Prism',
-        background:'#FFFFFF',
-        foreground:'#7E7D81',
-        bordercolor: '#000000',
-        link: 'https://prismlibrary.com/docs/',
-    },
+ 
     {
         name:'ReactiveUI',
         background:'#FFFFFF',
