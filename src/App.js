@@ -9,6 +9,7 @@ function App() {
   let Tag = styled.div`
     display: grid;
     grid-template-columns: 1fr 800px 1fr;
+    margin-bottom: 200px;
   `
 
   let Body = styled.div`

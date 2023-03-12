@@ -17,7 +17,7 @@ export const experiences = [
         projects: [
             {
                 name:'SMT 솔루션',
-                date:'21.06 ~ 22.12',
+                date:'2021.06 ~ 2022.12',
                 desc:'제조 공정에서 수행되는 여러 과정들을 자동화하여 제조 공정 솔루션을 개발합니다.',
                 items: 
                 [
@@ -169,4 +169,145 @@ export const experiences = [
             },
         ]
     }
-]
+];
+
+export const skills_major_desc = '주 사용 언어 및 프레임워크';
+export const skills_minor_desc = '경험해본 언어 및 프레임워크 (토이 프로젝트 등)';
+export const skills_nuget_desc = '사용해본 Nuget Package';
+
+export const skills_major = 
+[
+    {
+        name:'C#',
+        background:'#00D154',
+        foreground:'#FFFFFF',
+        image : 'https://blog.kakaocdn.net/dn/dqSvHV/btq1R8cXqgg/CAJ7G4j2GKGA2KfRL6iIs0/img.png',
+    },
+    {
+        name:'.NET Framework',
+        background:'#8337FF',
+        foreground:'#FFFFFF',
+        link:'https://dotnet.microsoft.com/ko-kr/',
+    },
+    {
+        name:'WPF',
+        background:'#000000',
+        foreground:'#FFFFFF',
+        link : 'https://github.com/dotnet/wpf',
+    },
+    {
+        name:'Infragistics',
+        background:'#FFFFFF',
+        foreground:'#0085FF',
+        bordercolor: '#000000',
+        link : 'https://www.infragistics.com/',
+    },
+];
+
+export const skills_minor = 
+[
+    {
+        name:'React',
+        background:'#222222',
+        foreground:'#61DAFB',
+        link:'https://ko.reactjs.org/',
+    },
+    {
+        name:'JavaScript',
+        background:'#FFE600',
+        foreground:'#000000',
+    },
+    {
+        name:'Node.Js',
+        background:'#8BC500',
+        foreground:'#666861',
+        link : 'https://nodejs.org/en/',
+    },
+    {
+        name:'styled-components',
+        background:'#FF00E5',
+        foreground:'#FFFFFF',
+        link : 'https://styled-components.com/',
+    },
+];
+
+export const nugets = [
+    {
+        name:'Prism',
+        background:'#FFFFFF',
+        foreground:'#7E7D81',
+        bordercolor: '#000000',
+        link: 'https://prismlibrary.com/docs/',
+    },
+    {
+        name:'ReactiveUI',
+        background:'#FFFFFF',
+        foreground:'31AEF3',
+        bordercolor: '#000000',
+        link: 'https://www.reactiveui.net/',
+    },
+    {
+        name:'SkiaSharp',
+        background:'#F8F8F8',
+        foreground:'#000000',
+        bordercolor: '#000000',
+        link: 'https://github.com/mono/SkiaSharp',
+    },
+    {
+        name:'CommandLineParser',
+        background:'#000000',
+        foreground:'#FFFFFF',
+        link: 'https://github.com/commandlineparser/commandline',
+    },
+    {
+        name:'OxyPlot',
+        background:'#FFFFFF',
+        foreground:'#5AA5C8',
+        bordercolor: '#000000',
+        link: 'https://oxyplot.github.io/',
+    },
+    {
+        name:'StyleCop.Analyzers',
+        background:'#004880',
+        foreground:'#FFFFFF',
+        link: 'https://github.com/DotNetAnalyzers/StyleCopAnalyzers',
+    },
+    {
+        name:'NUnit',
+        background:'#005B0C',
+        foreground:'#FFFFFF',
+        link: 'https://nunit.org/',
+    },
+    {
+        name:'Newtonsoft.Json',
+        background:'#000000',
+        foreground:'#FFFFFF',
+        link: 'https://www.newtonsoft.com/json',
+    },
+    {
+        name:'MathNet',
+        background:'#BDC1C7',
+        foreground:'#000000',
+        link:'https://numerics.mathdotnet.com/',
+    },
+    {
+        name:'LiveCharts',
+        background:'#FFFFFF',
+        foreground:'#004C8C',
+        bordercolor: '#000000',
+        link:'https://v0.lvcharts.com/'
+    },
+    {
+        name:'AdonisUI',
+        background:'#003F5C',
+        foreground:'#FFFFFF',
+        bordercolor: '#000000',
+        link : 'https://benruehl.github.io/adonis-ui/',
+    },
+    {
+        name:'Selenium',
+        background:'#43B02A',
+        foreground:'#FFFFFF',
+        link: 'https://www.selenium.dev/',
+    },
+];

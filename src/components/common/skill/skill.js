@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SeperatableHeader } from "../header";
+import { Language } from "./language";
 
 export function Skill(){
 
@@ -10,9 +11,8 @@ export function Skill(){
 
     return (
         <Tag>
-            <SeperatableHeader level={2} title={'Skill'}/>
-            {
-            }
+            <SeperatableHeader level={1} title={'Skill'}/>
+            <Language/>
         </Tag>
     )
 }

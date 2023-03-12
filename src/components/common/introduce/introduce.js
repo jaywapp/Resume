@@ -16,7 +16,7 @@ export function Introduce() {
 
     return (
         <Tag>
-            <SeperatableHeader level={2} title={'Introduce'} />
+            <SeperatableHeader level={1} title={'Introduce'} />
             <Content />
         </Tag>
     )

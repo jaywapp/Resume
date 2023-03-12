@@ -42,26 +42,28 @@ export function SeperatableHeader({level, title, date}){
     let margin = GetTopMargin(level);
     let height = GetHeight(level);
 
-    if(date == null){
+    let Tag = styled.div`
+        margin-top: ${margin+'px'};
+    `
 
+    if(date == null){
         return (
-            <div>
-                <HeaderDiv fontsize={size} margin={margin}>
+            <Tag>
+                <HeaderDiv fontsize={size}>
                     {title}
                 </HeaderDiv>
                 <SeperatorDiv height={height}/>
-            </div>
+            </Tag>
         );
     }
     else{
-
         return (
-            <div>
+            <Tag>
                 <ContentDate
-                    content={<HeaderDiv fontsize={size} margin={margin}>{title}</HeaderDiv>}
+                    content={<HeaderDiv fontsize={size}>{title}</HeaderDiv>}
                     date={date}/>
                 <SeperatorDiv height={height}/>
-            </div>
+            </Tag>
         )
     }
 }
@@ -77,16 +79,19 @@ export function Seperator({ level }){
 
 function GetFontSize(level){
     if(level == 1){
-        return 35;
+        return 40;
     }
     else if(level == 2){
-        return 30;
+        return 33;
     }
     else if(level == 3){
         return 25;
     }
     else if(level == 4){
-        return 20;
+        return 21;
+    }
+    else if(level == 5){
+        return 15;
     }
 
     return 0;
@@ -94,16 +99,19 @@ function GetFontSize(level){
 
 function GetTopMargin(level){
     if(level == 1){
-        return 30;
+        return 40;
     }
     else if(level == 2){
-        return 25;
+        return 30;
     }
     else if(level == 3){
-        return 20;
+        return 25;
     }
     else if(level == 4){
-        return 15;
+        return 10;
+    }
+    else if(level == 4){
+        return 5;
     }
 
     return 0;
@@ -111,13 +119,13 @@ function GetTopMargin(level){
 
 function GetHeight(level){
     if(level == 1){
-        return 5;
-    }
-    else if(level == 2){
         return 3;
     }
-    else if(level == 3){
+    else if(level == 2){
         return 1;
+    }
+    else if(level == 3){
+        return 0.5;
     }
     else if(level == 4){
         return 0.1;

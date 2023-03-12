@@ -12,7 +12,7 @@ export function Experience() {
 
     return (
         <Tag>
-            <SeperatableHeader level={2} title={'Experience'}/>
+            <SeperatableHeader level={1} title={'Experience'}/>
             {
                 experiences.map(e => ExperienceBlock(e))
             }
@@ -28,7 +28,7 @@ function ExperienceBlock(experience) {
     let index = 1;
     return (
         <Tag>
-            <SeperatableHeader level={3} title={experience.company} date={experience.date}/>
+            <SeperatableHeader level={2} title={experience.company} date={experience.date}/>
             {
                 experience.projects.map(p=> {
                     return(
