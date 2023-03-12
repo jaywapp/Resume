@@ -1,16 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { Block } from "../blocks";
 import { experiences } from "../data";
-import { InnerTitle2 } from "../styled";
-import { ContentDate, Date } from "../date";
 import { Project } from "../project/project";
+import { SeperatableHeader, Seperator } from "../header";
 
 export function Experience() {
+
+    let Tag = styled.div`
+        margin-bottom: 20px;
+    `;
+
     return (
-        <Block header='Experience' content={
-            experiences.map(e => ExperienceBlock(e))
-        } />
+        <Tag>
+            <SeperatableHeader level={2} title={'Experience'}/>
+            {
+                experiences.map(e => ExperienceBlock(e))
+            }
+        </Tag>
     )
 }
 
@@ -19,29 +25,25 @@ function ExperienceBlock(experience) {
     let Tag = styled.div`
     `;
 
+    let index = 1;
     return (
         <Tag>
-            <ContentDate content={<Title title={experience.company}/>} date={experience.date}/>
+            <SeperatableHeader level={3} title={experience.company} date={experience.date}/>
             {
                 experience.projects.map(p=> {
                     return(
+                        <>
+                        {
+                            index++ != 1
+                            ? <Seperator level={4}/>
+                            : <></>
+                        }
                         <Project project={p}/>
+                        </>
                     )
                 })
             }
-        </Tag>
-    )
-}
-
-function Title({ title }) {
-    let Tag = styled.div`
-    `;
-
-    return (
-        <Tag>
-            <InnerTitle2>
-                {title}
-            </InnerTitle2>
+            
         </Tag>
     )
 }

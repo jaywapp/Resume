@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import picture from '../../../assert/picture.jpg'
 import { introduce_title, introduce_contents } from "../data";
-import { Block } from "../blocks";
+import { SeperatableHeader } from "../header";
 
 const desc_title_size = '27px';
 const desc_content_size = '20px';
@@ -11,17 +11,27 @@ const image_width = '200px';
 export function Introduce() {
 
     let Tag = styled.div`
-        display: grid;
-        grid-template-columns: 1fr 3fr;
+        margin-bottom: 20px;
     `
 
     return (
-        <Block header='Introduce' content={
-            <Tag>
-                <Image column={1} image={picture} />
-                <Description column={2} title={introduce_title} descriptions={introduce_contents} />
-            </Tag>
-        } />
+        <Tag>
+            <SeperatableHeader level={2} title={'Introduce'} />
+            <Content />
+        </Tag>
+    )
+}
+
+function Content() {
+    let Tag = styled.div`
+        display: grid;
+        grid-template-columns: 1fr 3fr;`
+
+    return (
+        <Tag>
+            <Image column={1} image={picture} />
+            <Description column={2} title={introduce_title} descriptions={introduce_contents} />
+        </Tag>
     )
 }
 

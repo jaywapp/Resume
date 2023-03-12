@@ -15,10 +15,16 @@ export function Date({date}){
     )
 }
 
-export function ContentDate({content, date}){
+export function ContentDate({content, date, topMargin}){
+    
+    var top = 0;
+    if(topMargin != null)
+        top = topMargin;
+
     let Tag = styled.div`
         display: grid;
         grid-template-columns: 1fr auto;
+        margin-top: ${top + 'px'};
     `;
 
     let Left = styled.div`
