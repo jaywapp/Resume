@@ -138,7 +138,7 @@ function PerformanceSummary({summary}){
         {
             summary.map(s=> {
                 return(
-                    <div>{idx + '. ' + s}</div>
+                    <div>{idx++ + '. ' + s}</div>
                 )
             })
         }
