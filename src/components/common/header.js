@@ -88,7 +88,7 @@ function GetFontSize(level){
         return 25;
     }
     else if(level == 4){
-        return 21;
+        return 17;
     }
     else if(level == 5){
         return 15;

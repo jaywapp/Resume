@@ -19,6 +19,4 @@ export const contact_items = [
         link: 'https://github.com/jaywapp/Projects',
         icon: 'https://img.icons8.com/ios-filled/256/portfolio.png',
     }
-
-
 ]

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { skills_major, skills_minor, nugets, skills_major_desc, skills_minor_desc, skills_nuget_desc } from "../data";
+import { Nugets, Majors, Minors } from "../../../data/information";
 import { Header } from "../header";
 
 
@@ -13,34 +13,9 @@ export function Language(){
 
     return (
         <Tag>
-            <LanguageBox/>
             <LanguageGrid/>
         </Tag>
 
-    )
-}
-
-function LanguageBox(){
-    let Tag = styled.div`
-        margin-top: 25px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        border: 1px solid #d3d3d350;
-        background-color: #d3d3d350;
-    `;
-
-    let LI = styled.li`
-        margin-bottom: 5px;
-    `;
-
-    return(
-        <Tag>
-            <LI>{'Major : ' + skills_major_desc}</LI>
-            <LI>{'Minor : ' + skills_minor_desc}</LI>
-            <LI>{'Nuget : ' + skills_nuget_desc}</LI>
-        </Tag>
     )
 }
 
@@ -68,7 +43,7 @@ function Major({column}){
     return (
         <Tag>
             <Header level={2} title={'Major'}/>
-            <Keywords items={skills_major}/>
+            <Keywords items={Majors}/>
         </Tag>
     )
 }
@@ -81,7 +56,7 @@ function Minor({column}){
     return (
         <Tag>
             <Header level={2} title={'Minor'}/>
-            <Keywords items={skills_minor}/>
+            <Keywords items={Minors}/>
         </Tag>
     )
 }
@@ -94,7 +69,7 @@ function Nuget({column}){
     return (
         <Tag>
             <Header level={2} title={'Nuget'}/>
-            <Keywords items={nugets}/>
+            <Keywords items={Nugets}/>
         </Tag>
     )
 }
@@ -120,21 +95,9 @@ function Keyword({item}){
         padding-right: 10px;
         padding-top: 2px;
         padding-bottom: 2px;
-
-        &:hover{  
-            background-color : darkgray;
-            color : white;
-        }
     `;
 
-
-    const onClick = () => {
-
-        if(item.link != null)
-            window.open(item.link, '_blank');
-    }
-
     return (
-        <Tag onClick={onClick}>{'● ' + item.name}</Tag>
+        <Tag>{'● ' + item}</Tag>
     )
 }

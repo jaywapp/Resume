@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import picture from '../../../assert/picture.jpg'
 import { introduce_title, introduce_contents } from "../data";
+import { IntroTitle, IntroDesc } from "../../../data/information";
 import { SeperatableHeader } from "../header";
 
-const desc_title_size = '27px';
-const desc_content_size = '20px';
+const desc_title_size = '22px';
+const desc_content_size = '17px';
 const image_width = '200px';
 
 export function Introduce() {
@@ -30,7 +31,7 @@ function Content() {
     return (
         <Tag>
             <Image column={1} image={picture} />
-            <Description column={2} title={introduce_title} descriptions={introduce_contents} />
+            <Description column={2} title={IntroTitle} descriptions={IntroDesc} />
         </Tag>
     )
 }

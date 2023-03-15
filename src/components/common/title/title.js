@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "./text";
 import { Contact } from "./contact";
-import { title_name, title_desc, title_keywords } from "../data";
-import { contact_items } from "../links";
+import { Common, Contacts } from "../../../data/information";
 import { Seperator } from "../header";
 
 export function Title() {
@@ -21,8 +20,8 @@ export function Title() {
     return (
         <Tag>
             <Grid>
-                <Text column={1} title={title_name} desc={title_desc} keywords={title_keywords} />
-                <Contact column={2} items={contact_items} />
+                <Text column={1} title={Common.name} desc={Common.job} keywords={Common.keywords} />
+                <Contact column={2} items={Contacts} />
             </Grid>
             <Seperator level={1}/>
         </Tag>

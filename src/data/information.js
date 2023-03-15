@@ -4,8 +4,34 @@ export const Common = {
     name : '박준영',
     birth : '1991.08.16',
     Year : 7,
-    job : 'Software Developor',
+    job : 'Solution Software Developor',
+    keywords : [
+        'C#', '.NET', 'WPF', 'EDA', 'CAD', 'PCB', 'Manufacturing'
+    ]
 }
+
+export const Contacts = [
+    {
+        name: 'Github',
+        link: 'https://github.com/jaywapp',
+        icon: 'https://img.icons8.com/glyph-neue/256/github.png',
+    },
+    {
+        name: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/jaywapp16/',
+        icon: 'https://img.icons8.com/ios-filled/256/linkedin.png',
+    },
+    {
+        name: 'Blog',
+        link: 'https://jaywapp.tistory.com/',
+        icon: 'https://img.icons8.com/external-phatplus-solid-phatplus/256/external-blog-digital-service-phatplus-solid-phatplus.png',
+    },
+    {
+        name: 'Portfolio',
+        link: 'https://github.com/jaywapp/Projects',
+        icon: 'https://img.icons8.com/ios-filled/256/portfolio.png',
+    }
+]
 
 // Skills
 
@@ -34,7 +60,7 @@ export const IntroDesc = [
 
 // Experience
 
-export const Experiences = [
+export const Expes = [
     {
         company : '펜타큐브',
         roles : [
@@ -49,7 +75,7 @@ export const Experiences = [
             'SMT 솔루션 설계 및 개발 (CubicSMT) / Tech Leader',
             '회로 설계 솔루션 프로젝트 리더 (CubicLDRC) / Project Leader ',
         ],
-        performance : [
+        performances : [
             {
                 name : 'SkiaSharp기반 Canvas, Geometry 구조 구축',
                 desc : 'OpenGL Based Canvas가 고객의 장비에서 정상 동작하지 않는 이슈가 있었습니다. Geometry 정보가 제한적인 제조 공정 고객의 상황에 맞게 SkiaCanvas를 이용하여 재설계 및 배포하였습니다.',
