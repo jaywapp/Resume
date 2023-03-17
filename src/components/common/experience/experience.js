@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { experiences } from "../data";
 import { Expes } from "../../../data/information";
 import { Project } from "../project/project";
 import { Header, SeperatableHeader, Seperator } from "../header";
@@ -25,41 +24,72 @@ function Experience(experience) {
     let Tag = styled.div`
     `;
 
-    let count = experience.roles.length;
-    let idx = 1;
-
     return (
         <Tag>
-            <Header level={2} title={experience.company}/>
-            <div>{experience.enterDate + ' ~ ' + experience.resignDate}</div>
-            {
-                experience.roles.map(role => {
-                    
-                    let result = role;
-
-                    if(idx++ != count)
-                        result += ' / '
-
-                    return(
-                        <>{result}</>
-                    )
-                })
-            }
-            {/* Header & date */}
-            {/* Roles */}
+            <Header level={2} title={experience.company} />
+            <Roles roles={experience.roles} />
+            <Date enter={experience.enterDate} resign={experience.resignDate} />
             <Works works={experience.works} />
             <Performances performances={experience.performances} />
         </Tag>
     )
 }
 
-function Works({ works }) {
+function Date({ enter, resign }) {
     let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        font-size: 20px;
+        width: fit-content;
+        background-color: lightgray;
+    `;
+
+    return (
+        <Tag>{enter + ' ~ ' + resign}</Tag>
+    )
+}
+
+function Roles({ roles }) {
+    let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: flex;
     `;
 
     return (
         <Tag>
-            <Header level={3} title={"업무"}/>
+            {
+                roles.map(role => {
+                    return (
+                        <Role role={role} />
+                    )
+                })
+            }
+        </Tag>
+    )
+}
+
+function Role({ role }) {
+    let Tag = styled.div`
+        width: fit-content;
+        margin-right: 10px;
+    `
+
+    return (
+        <Tag>{role}</Tag>
+    )
+}
+
+function Works({ works }) {
+    let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
+    `;
+
+    return (
+        <Tag>
+            <Header level={3} title={"업무"} />
             {
                 works.map(w => {
                     return (
@@ -74,6 +104,8 @@ function Works({ works }) {
 
 function Work({ work }) {
     let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
     `;
 
     return (
@@ -83,11 +115,13 @@ function Work({ work }) {
 
 function Performances({ performances }) {
     let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
     `;
 
-    return(
+    return (
         <Tag>
-            <Header level={3} title={"성과"}/>
+            <Header level={3} title={"성과"} />
             {
                 performances.map(p => {
                     return (
@@ -103,20 +137,24 @@ function Performances({ performances }) {
 function Performance({ performance }) {
 
     let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 20px;
     `;
 
     return (
         <Tag>
-            <Header level={4} title={performance.name}/>
-            <PerformanceDesc desc={performance.desc}/>
-            <PerformanceSummary summary={performance.summary}/>
+            <Header level={4} title={performance.name} />
+            <PerformanceDesc desc={performance.desc} />
+            <PerformanceSummary summary={performance.summary} />
         </Tag>
     )
 }
 
-function PerformanceDesc({desc}){
+function PerformanceDesc({ desc }) {
 
     let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
     `;
 
     return (
@@ -126,8 +164,10 @@ function PerformanceDesc({desc}){
     )
 }
 
-function PerformanceSummary({summary}){
+function PerformanceSummary({ summary }) {
     let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
         margin-left: 10px;
     `;
 
@@ -135,16 +175,26 @@ function PerformanceSummary({summary}){
 
     return (
         <Tag>
-        {
-            summary.map(s=> {
-                return(
-                    <div>{idx++ + '. ' + s}</div>
-                )
-            })
-        }
+            {
+                summary.map(s => {
+                    return (
+                        <PerformanceSummaryUnit idx={idx++} unit={s} />
+                    )
+                })
+            }
         </Tag>
     )
+}
 
+function PerformanceSummaryUnit({ idx, unit }) {
+    let Tag = styled.div`
+        margin-top: 5px;
+        margin-bottom: 5px;
+    `;
+
+    return (
+        <Tag>{idx + '. ' + unit}</Tag>
+    )
 }
 
 function ExperienceBlock(experience) {
