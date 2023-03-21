@@ -3,6 +3,7 @@ import { Title } from './components/common/title/title';
 import { Introduce } from './components/common/introduce/introduce';
 import { Experiences } from './components/common/experience/experience';
 import { Skill } from './components/common/skill/skill';
+import { useState } from "react";
 import styled from 'styled-components';
 
 function App() {
@@ -16,11 +17,41 @@ function App() {
     grid-column: 2;
   `
 
-  let lang = 'eg';
+  let LanguageTag = styled.div`
+    display: grid;
+    grid-template-columns: 1fr auto;
+    text-align: right;
+  `
+
+  let Language = styled.div`
+    grid-column: 2;
+    width: fit-content;
+    padding: 5px;
+    
+    &:hover{  
+        background-color : darkgray;
+        color : white;
+    }
+  `;
+
+  const korean = 'Korean';
+  const english = 'English';
+
+  const [lang, setLang] = useState(korean);
+  const [displayLang, setDisplayLang] = useState(english);
+
+  const onClick= () => {
+      setLang(lang == korean ? english: korean);
+      setDisplayLang(lang == korean ? korean: english);
+  }
+
 
   return (
     <Tag>
       <Body>
+        <LanguageTag>
+          <Language onClick={onClick}>{displayLang}</Language>
+        </LanguageTag>
         <Title lang={lang} />
         <Introduce lang={lang} />
         <Experiences lang={lang}/>

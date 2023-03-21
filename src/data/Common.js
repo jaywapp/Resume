@@ -1,8 +1,8 @@
 // Common
 export function Common( lang ){
-    let language = lang ?? 'kr'
+    let language = lang ?? 'Korean'
 
-    if(language == 'eg'){
+    if(language == 'English'){
         return CommonEg;
     }
     else{

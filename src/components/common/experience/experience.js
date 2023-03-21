@@ -89,7 +89,7 @@ function Works({ lang, works }) {
         margin-bottom: 5px;
     `;
 
-    let title = lang == 'eg' ? 'Works' : '업무';
+    let title = lang == 'English' ? 'Works' : '업무';
 
     return (
         <Tag>
@@ -123,7 +123,7 @@ function Projects({ lang, projects }){
         margin-bottom: 5px;
     `;
 
-    let title = lang == 'eg' ? 'Projects' : '프로젝트';
+    let title = lang == 'English' ? 'Projects' : '프로젝트';
 
     return (
         <Tag>
@@ -172,12 +172,12 @@ function Project({lang, project}){
         padding-bottom: 10px;
     `;
 
-    let name = lang == 'eg' ? 'Name' : '이름';
-    let desc = lang == 'eg' ? 'Description' : '설명';
-    let date = lang == 'eg' ? 'Date' : '기간';
-    let role = lang == 'eg' ? 'Role' : '역할';
-    let result = lang == 'eg' ? 'Result' : '성과';
-    let skill = lang == 'eg' ? 'Skill' : '기술';
+    let name = lang == 'English' ? 'Name' : '이름';
+    let desc = lang == 'English' ? 'Description' : '설명';
+    let date = lang == 'English' ? 'Date' : '기간';
+    let role = lang == 'English' ? 'Role' : '역할';
+    let result = lang == 'English' ? 'Result' : '성과';
+    let skill = lang == 'English' ? 'Skill' : '기술';
 
     return (
         <Tag>

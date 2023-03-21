@@ -1,7 +1,7 @@
 export function Intro( lang ){
-    let language = lang ?? 'kr'
+    let language = lang ?? 'Korean'
 
-    if(language == 'eg'){
+    if(language == 'English'){
         return IntroEg;
     }
     else{
