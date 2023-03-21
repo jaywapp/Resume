@@ -16,12 +16,14 @@ function App() {
     grid-column: 2;
   `
 
+  let lang = 'eg';
+
   return (
     <Tag>
       <Body>
-        <Title />
-        <Introduce />
-        <Experiences />
+        <Title lang={lang} />
+        <Introduce lang={lang} />
+        <Experiences lang={lang}/>
         <Skill />
       </Body>
     </Tag>

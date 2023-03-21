@@ -1,25 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { Expes } from "../../../data/information";
+import { Exps } from "../../../data/Exps";
 import { Header, SeperatableHeader, Seperator } from "../header";
 
-export function Experiences() {
+export function Experiences({lang}) {
 
     let Tag = styled.div`
         margin-bottom: 20px;
     `;
 
+    let exps = Exps(lang);
+
     return (
         <Tag>
             <SeperatableHeader level={1} title={'Experience'} />
             {
-                Expes.map(e => Experience(e))
+                exps.map(e => Experience(lang, e))
             }
         </Tag>
     )
 }
 
-function Experience(experience) {
+function Experience(lang, experience) {
     let Tag = styled.div`
     `;
 
@@ -28,8 +30,8 @@ function Experience(experience) {
             <Header level={2} title={experience.company} />
             <Roles roles={experience.roles} />
             <Date enter={experience.enterDate} resign={experience.resignDate} />
-            <Works works={experience.works} />
-            <Projects projects={experience.projects}/>
+            <Works lang={lang} works={experience.works} />
+            <Projects lang={lang} projects={experience.projects}/>
             {/* <Performances performances={experience.performances} /> */}
         </Tag>
     )
@@ -81,15 +83,17 @@ function Role({ role }) {
     )
 }
 
-function Works({ works }) {
+function Works({ lang, works }) {
     let Tag = styled.div`
         margin-top: 5px;
         margin-bottom: 5px;
     `;
 
+    let title = lang == 'eg' ? 'Works' : '업무';
+
     return (
         <Tag>
-            <Header level={3} title={"업무"} />
+            <Header level={3} title={title} />
             {
                 works.map(w => {
                     return (
@@ -113,19 +117,21 @@ function Work({ work }) {
     )
 }
 
-function Projects({projects}){
+function Projects({ lang, projects }){
     let Tag = styled.div`
         margin-top: 5px;
         margin-bottom: 5px;
     `;
 
+    let title = lang == 'eg' ? 'Projects' : '프로젝트';
+
     return (
         <Tag>
-            <Header level={3} title={"프로젝트"} />
+            <Header level={3} title={title} />
             {
                 projects.map(p => {
                     return (
-                        <Project project={p} />
+                        <Project lang={lang} project={p} />
                     )
                 })
             }
@@ -135,7 +141,7 @@ function Projects({projects}){
 
 }
 
-function Project({project}){
+function Project({lang, project}){
 
     let Tag = styled.div`
         margin-top: 5px;
@@ -166,14 +172,21 @@ function Project({project}){
         padding-bottom: 10px;
     `;
 
+    let name = lang == 'eg' ? 'Name' : '이름';
+    let desc = lang == 'eg' ? 'Description' : '설명';
+    let date = lang == 'eg' ? 'Date' : '기간';
+    let role = lang == 'eg' ? 'Role' : '역할';
+    let result = lang == 'eg' ? 'Result' : '성과';
+    let skill = lang == 'eg' ? 'Skill' : '기술';
+
     return (
         <Tag>
-            <LeftTag row={1}>이름</LeftTag>
-            <LeftTag row={2}>설명</LeftTag>
-            <LeftTag row={3}>기간</LeftTag>
-            <LeftTag row={4}>역할</LeftTag>
-            <LeftTag row={5}>성과</LeftTag>
-            <LeftTag row={6}>기술</LeftTag>
+            <LeftTag row={1}>{name}</LeftTag>
+            <LeftTag row={2}>{desc}</LeftTag>
+            <LeftTag row={3}>{date}</LeftTag>
+            <LeftTag row={4}>{role}</LeftTag>
+            <LeftTag row={5}>{result}</LeftTag>
+            <LeftTag row={6}>{skill}</LeftTag>
 
             <RightTag row={1}>{project.name}</RightTag>
             <RightTag row={2}>{project.desc}</RightTag>

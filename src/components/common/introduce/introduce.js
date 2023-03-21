@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import picture from '../../../assert/picture.jpg'
-import { introduce_title, introduce_contents } from "../data";
-import { IntroTitle, IntroDesc } from "../../../data/information";
 import { SeperatableHeader } from "../header";
+import { Intro } from "../../../data/Intro";
 
 const desc_title_size = '22px';
 const desc_content_size = '17px';
 const image_width = '200px';
 
-export function Introduce() {
+export function Introduce( {lang} ) {
 
     let Tag = styled.div`
         margin-bottom: 20px;
@@ -18,20 +17,22 @@ export function Introduce() {
     return (
         <Tag>
             <SeperatableHeader level={1} title={'Introduce'} />
-            <Content />
+            <Content lang={lang}/>
         </Tag>
     )
 }
 
-function Content() {
+function Content( {lang} ) {
     let Tag = styled.div`
         display: grid;
         grid-template-columns: 1fr 3fr;`
 
+    let intro = Intro(lang);
+
     return (
         <Tag>
             <Image column={1} image={picture} />
-            <Description column={2} title={IntroTitle} descriptions={IntroDesc} />
+            <Description column={2} title={intro.title} descriptions={intro.desc} />
         </Tag>
     )
 }
